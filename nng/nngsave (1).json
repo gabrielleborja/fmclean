@@ -349,7 +349,8 @@
     },
     {
       "lean": "theorem eq_zero_or_eq_zero_of_mul_eq_zero (a b : mynat) (h : a * b = 0) :\n  a = 0 ∨ b = 0 :=\n",
-      "editorText": "cases a,\r\nleft,\r\nrefl,\r\nrw succ_mul at h,\r\nhave q:= add_left_eq_zero(h),\r\nright,\r\nexact q,"
+      "isSolved": true,
+      "editorText": "cases a,\r\nleft,\r\nrefl,\r\nrw succ_mul at h,\r\nhave q:= add_left_eq_zero(h),\r\nright,\r\nexact q, "
     },
     {
       "lean": "theorem mul_eq_zero_iff (a b : mynat): a * b = 0 ↔ a = 0 ∨ b = 0 :=\n",
