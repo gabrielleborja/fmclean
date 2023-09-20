@@ -389,7 +389,8 @@
     },
     {
       "lean": "theorem le_antisymm (a b : mynat) (hab : a ≤ b) (hba : b ≤ a) : a = b :=\n",
-      "editorText": "sorry"
+      "isSolved": true,
+      "editorText": "cases hab with v hb,\r\ncases hba with t ha,\r\nrw ha at hb,\r\nsymmetry at hb,\r\nrw add_assoc at hb,\r\nhave h := eq_zero_of_add_right_eq_self hb,\r\nhave q := add_right_eq_zero h,\r\nrw q at h,\r\nrw zero_add at h,\r\nrw q at ha,\r\nrw add_zero at ha,\r\nexact ha, "
     },
     {
       "lean": "lemma le_zero (a : mynat) (h : a ≤ 0) : a = 0 :=\n",
