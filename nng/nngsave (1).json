@@ -394,7 +394,8 @@
     },
     {
       "lean": "lemma le_zero (a : mynat) (h : a ≤ 0) : a = 0 :=\n",
-      "editorText": "sorry"
+      "isSolved": true,
+      "editorText": "cases h with b ha,\r\nsymmetry at ha,\r\nhave h2 := add_right_eq_zero ha,\r\nexact h2,"
     },
     {
       "lean": "lemma succ_le_succ (a b : mynat) (h : a ≤ b) : succ a ≤ succ b :=\n",
