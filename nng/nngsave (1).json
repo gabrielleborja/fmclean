@@ -429,7 +429,8 @@
     },
     {
       "lean": "theorem add_le_add_left {a b : mynat} (h : a ≤ b) (t : mynat) :\n  t + a ≤ t + b :=\n",
-      "editorText": "sorry"
+      "isSolved": true,
+      "editorText": "induction t with t ht,\r\nrw zero_add,\r\nrw zero_add,\r\nexact h,\r\nrw succ_add,\r\nrw succ_add,\r\napply succ_le_succ,\r\nexact ht,"
     },
     {
       "lean": "lemma lt_aux_one (a b : mynat) : a ≤ b ∧ ¬ (b ≤ a) → succ a ≤ b :=\n",
