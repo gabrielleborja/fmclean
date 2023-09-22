@@ -150,7 +150,17 @@ end
 theorem lem_irrefutable :
   ¬¬(P∨¬P)  :=
 begin
-  sorry,
+  intro f_pfp, -- f(p or fp)
+  have b : (P ∨ ¬P),
+  right,
+  intro p,
+  have c : (P ∨ ¬P),
+  left,
+  exact p,
+  have d : false := f_pfp c,
+  contradiction,
+  have e : false := f_pfp b,
+  contradiction,
 end
 
 
