@@ -20,13 +20,24 @@ end
 theorem doubleneg_elim :
   ¬¬P → P  :=
 begin
-  sorry,
+  intro p,
+  by_contradiction hboom,
+  have b : false := p hboom,
+  contradiction,
 end
 
 theorem doubleneg_law :
   ¬¬P ↔ P  :=
 begin
-  sorry,
+  split,
+  intro p,
+  by_contradiction hboom,
+  have b : false := p hboom,
+  contradiction,
+  intro h,
+  intro hb,
+  have b : false := hb h,
+  contradiction,
 end
 
 ------------------------------------------------
@@ -36,13 +47,23 @@ end
 theorem disj_comm :
   (P ∨ Q) → (Q ∨ P)  :=
 begin
-  sorry,
+  intro p,
+  cases p,
+  right,
+  exact p,
+  left,
+  exact p,
 end
 
 theorem conj_comm :
   (P ∧ Q) → (Q ∧ P)  :=
 begin
-  sorry,
+  intro p,
+  split,
+  cases p,
+  exact p_right,
+  cases p,
+  exact p_left,
 end
 
 
