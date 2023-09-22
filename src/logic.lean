@@ -190,13 +190,27 @@ end
 theorem disj_as_negconj :
   P∨Q → ¬(¬P∧¬Q)  :=
 begin
-  sorry,
+  intro pq,
+  intro fpfq,
+  cases fpfq with l r,
+  cases pq,
+  have b : false := l pq,
+  contradiction,
+  have c : false := r pq,
+  contradiction, 
 end
 
 theorem conj_as_negdisj :
   P∧Q → ¬(¬P∨¬Q)  :=
 begin
-  sorry,
+  intro pq,
+  intro fpfq,
+  cases pq with p q,
+  cases fpfq with fp fq,
+  have b : false := fp p,
+  contradiction,
+  have c : false := fq q,
+  contradiction,
 end
 
 
