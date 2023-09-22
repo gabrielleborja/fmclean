@@ -30,10 +30,12 @@ theorem doubleneg_law :
   ¬¬P ↔ P  :=
 begin
   split,
+-- caso → 
   intro p,
   by_contradiction hboom,
   have b : false := p hboom,
   contradiction,
+-- caso ← 
   intro h,
   intro hb,
   have b : false := hb h,
@@ -86,7 +88,7 @@ theorem disj_as_impl :
   (P ∨ Q) → (¬P → Q)  :=
 begin
   intro pq,
-  intro fp,
+  intro fp, --f(alse)p
   cases pq,
   have b : false := fp pq,
   contradiction,
@@ -101,19 +103,43 @@ end
 theorem impl_as_contrapositive :
   (P → Q) → (¬Q → ¬P)  :=
 begin
-  sorry,
+  intro pq,
+  intro fq, -- f(alse)q
+  intro p,
+  have b : Q := pq p,
+  have c : false := fq b,
+  exact c,
 end
 
 theorem impl_as_contrapositive_converse :
   (¬Q → ¬P) → (P → Q)  :=
 begin
-  sorry,
+  intro fqfp, -- f(alse)q and f(alse)p
+  intro p,
+  by_contradiction hboom,
+  have b : ¬P  := fqfp hboom,
+  have c : false := b p,
+  exact c,
 end
 
 theorem contrapositive_law :
   (P → Q) ↔ (¬Q → ¬P)  :=
 begin
-  sorry,
+  split,
+--caso → 
+  intro pq,
+  intro fq,
+  intro p,
+  have b : Q := pq p,
+  have c : false := fq b,
+  exact c,
+--caso ← 
+  intro fqfp,
+  intro p,
+  by_contradiction hboom,
+  have b : ¬P  := fqfp hboom,
+  have c : false := b p,
+  exact c,
 end
 
 
